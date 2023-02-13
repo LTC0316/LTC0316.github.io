@@ -184,7 +184,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2023-02-13 15:41:01 / Modified: 18:33:42" itemprop="dateCreated datePublished" datetime="2023-02-13T15:41:01+08:00">2023-02-13</time>
+              <time title="Created: 2023-02-13 15:41:01 / Modified: 18:35:30" itemprop="dateCreated datePublished" datetime="2023-02-13T15:41:01+08:00">2023-02-13</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -274,7 +274,7 @@
 
 <h3 id="2-安装singularity"><a href="#2-安装singularity" class="headerlink" title="2. 安装singularity"></a>2. 安装singularity</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">module load singularity/3.7.0</span><br></pre></td></tr></table></figure>
 
-<h3 id="3-环境变量"><a href="#3-环境变量" class="headerlink" title="3. 环境变量"></a>3. 环境变量</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">cd $HOME</span><br><span class="line">vim .bashrc</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">将下列语句添加到.bashrc中</span></span><br><span class="line">export PATH=/gpfs/share/home/&lt;user_id&gt;/go/bin:$PATH</span><br><span class="line">source .bashrc</span><br></pre></td></tr></table></figure>
+<h3 id="3-环境变量"><a href="#3-环境变量" class="headerlink" title="3. 环境变量"></a>3. 环境变量</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">cd $HOME</span><br><span class="line">vim .bashrc</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">将下列语句添加到.bashrc中</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash"><span class="built_in">export</span> PATH=/gpfs/share/home/&lt;user_id&gt;/go/bin:<span class="variable">$PATH</span></span></span><br><span class="line">source .bashrc</span><br></pre></td></tr></table></figure>
 
 <hr>
 <h2 id="III-启用singularity"><a href="#III-启用singularity" class="headerlink" title="III. 启用singularity"></a>III. 启用singularity</h2><h3 id="1-将SIF镜像下载到常规节点"><a href="#1-将SIF镜像下载到常规节点" class="headerlink" title="1. 将SIF镜像下载到常规节点"></a>1. 将SIF镜像下载到常规节点</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scp -r &lt;user_id&gt;@162.105.133.209:/home/&lt;user_id&gt;/s-Geant4.sif /gpfs/share/home/&lt;user_id&gt;/</span><br></pre></td></tr></table></figure>
