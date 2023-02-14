@@ -184,7 +184,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2023-02-14 10:21:26 / Modified: 13:24:48" itemprop="dateCreated datePublished" datetime="2023-02-14T10:21:26+08:00">2023-02-14</time>
+              <time title="Created: 2023-02-14 10:21:26 / Modified: 13:35:24" itemprop="dateCreated datePublished" datetime="2023-02-14T10:21:26+08:00">2023-02-14</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -294,18 +294,15 @@
 <h2 id="VIII-Geant4实例（交互）"><a href="#VIII-Geant4实例（交互）" class="headerlink" title="VIII. Geant4实例（交互）"></a>VIII. Geant4实例（交互）</h2><h3 id="1-查看可用分区"><a href="#1-查看可用分区" class="headerlink" title="1. 查看可用分区"></a>1. 查看可用分区</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sacctmgr show ass user=`whoami` format=part |uniq</span><br></pre></td></tr></table></figure>
 
 <p>结果如图：</p>
-<img src="/2023/02/14/23-02-14_HPC_usage/23-02-14_HPC_usage\23-02-14-1.jpg" alt="23-02-14-1" style="zoom:80%;">
-
+<p><img src="/2023/02/14/23-02-14_HPC_usage/23-02-14-1.jpg"></p>
 <h3 id="2-申请核心"><a href="#2-申请核心" class="headerlink" title="2. 申请核心"></a>2. 申请核心</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">salloc -p C032M0128G -N2 --ntasks-per-node=32 -q normal -t 2:00:00</span><br></pre></td></tr></table></figure>
 
 <p>结果如图：</p>
-<img src="/2023/02/14/23-02-14_HPC_usage/23-02-14_HPC_usage\23-02-14-2.jpg" alt="23-02-14-1" style="zoom:80%;">
-
+<p><img src="/2023/02/14/23-02-14_HPC_usage/23-02-14-2.jpg"></p>
 <h3 id="3-登录节点"><a href="#3-登录节点" class="headerlink" title="3. 登录节点"></a>3. 登录节点</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ssh a5u03n04</span><br><span class="line">lscpu # 查看核心是否申请成功</span><br></pre></td></tr></table></figure>
 
 <p>结果如图：</p>
-<img src="/2023/02/14/23-02-14_HPC_usage/23-02-14_HPC_usage\23-02-14-3.jpg" alt="23-02-14-1" style="zoom:80%;">
-
+<p><img src="/2023/02/14/23-02-14_HPC_usage/23-02-14-3.jpg"></p>
 <h3 id="4-使用Geant4"><a href="#4-使用Geant4" class="headerlink" title="4. 使用Geant4"></a>4. 使用Geant4</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">cd singularity/</span><br><span class="line">module load singularity/3.7.0</span><br><span class="line">singularity shell -w Geant4</span><br><span class="line">cd Geant4/home</span><br><span class="line">source .bashrc</span><br><span class="line">cd v7</span><br><span class="line">rm -rf build/</span><br><span class="line">mkdir build</span><br><span class="line">cd build</span><br><span class="line">cmake ..</span><br><span class="line">make -j64</span><br><span class="line">./exampleB1 run1.mac &gt; log.txt</span><br></pre></td></tr></table></figure>
 
 <hr>
@@ -364,7 +361,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-02-14 13:19:21" itemprop="dateModified" datetime="2023-02-14T13:19:21+08:00">2023-02-14</time>
+                <time title="Modified: 2023-02-14 13:35:26" itemprop="dateModified" datetime="2023-02-14T13:35:26+08:00">2023-02-14</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -464,7 +461,7 @@
 <h3 id="3-配置环境变量"><a href="#3-配置环境变量" class="headerlink" title="3. 配置环境变量"></a>3. 配置环境变量</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">cd Geant4/home</span><br><span class="line">vim .bashrc</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">将下列语句添加到文件末尾</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash"><span class="built_in">source</span> /gpfs/share/home/2201210084/singularity/Geant4/home/geant4/bin/geant4.sh</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash"><span class="built_in">source</span> /gpfs/share/home/2201210084/singularity/Geant4/home/geant4/share/Geant4/geant4make</span></span><br><span class="line"></span><br><span class="line">source .bashrc</span><br></pre></td></tr></table></figure>
 
 <p>看见如下字样表示成功</p>
-<p><img src="/./images/23-02-13-1.jpg"></p>
+<p><img src="/2023/02/13/23-02-13_Installation/23-02-13-1.jpg"></p>
 <h2 id="IV-附录"><a href="#IV-附录" class="headerlink" title="IV. 附录"></a>IV. 附录</h2><h3 id="1-SIF容器与sandbox相互转换"><a href="#1-SIF容器与sandbox相互转换" class="headerlink" title="1. SIF容器与sandbox相互转换"></a>1. SIF容器与sandbox相互转换</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">1. 将SIF格式的容器转换成sandbox;</span></span><br><span class="line">singularity build --sandbox XXX XXX.sif</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">2. 将sandbox容器镜像转化成SIF格式;</span></span><br><span class="line">singularity build XXX.sif XXX</span><br></pre></td></tr></table></figure>
 
 <h3 id="2-在fakeroot节点上删除sandbox镜像"><a href="#2-在fakeroot节点上删除sandbox镜像" class="headerlink" title="2. 在fakeroot节点上删除sandbox镜像"></a>2. 在fakeroot节点上删除sandbox镜像</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">假设要删除的为文件夹名为molspin的sandbox镜像</span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">首先，以可读的模式进入要删除的镜像</span></span><br><span class="line">singularity shell --fakeroot -w molspin</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">删除掉容器中，基于fakeroot创建的所有文件</span></span><br><span class="line">rm -rf /* 1&gt;/dev/null 2&gt;&amp;1</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">退出镜像</span></span><br><span class="line">exit</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">将创建好的软件镜像上传到高性能计算集群，加载singularity软件环境</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">删除掉剩下的</span></span><br><span class="line">rm -rf molspin</span><br></pre></td></tr></table></figure>
