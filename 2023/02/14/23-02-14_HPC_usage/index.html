@@ -23,20 +23,20 @@
   <meta name="description" content="HPC Usage（以未名一号为例） I. 准备工作 连接到login节点  通过以下命令可以查看对应集群可用分区，也可以通过 sinfo 查看分区的空闲状态 1sacctmgr show ass user&#x3D;&#96;whoami&#96; format&#x3D;part |uniq  通过以下命令可以查询 每个用户在每个分区下可用的QOS 1sacctmgr show ass user&#x3D;&#96;whoami&#96;  format">
 <meta property="og:type" content="article">
 <meta property="og:title" content="HPC Usage">
-<meta property="og:url" content="https://ltc0316.github.io/2023/02/14/23-02-13_HPC_usage/index.html">
+<meta property="og:url" content="https://ltc0316.github.io/2023/02/14/23-02-14_HPC_usage/index.html">
 <meta property="og:site_name" content="OutisLi&#39;s Blog">
 <meta property="og:description" content="HPC Usage（以未名一号为例） I. 准备工作 连接到login节点  通过以下命令可以查看对应集群可用分区，也可以通过 sinfo 查看分区的空闲状态 1sacctmgr show ass user&#x3D;&#96;whoami&#96; format&#x3D;part |uniq  通过以下命令可以查询 每个用户在每个分区下可用的QOS 1sacctmgr show ass user&#x3D;&#96;whoami&#96;  format">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://ltc0316.github.io/2023/02/14/23-02-13_HPC_usage/images/23-02-14-1.jpg">
-<meta property="og:image" content="https://ltc0316.github.io/2023/02/14/23-02-13_HPC_usage/images/23-02-14-2.jpg">
-<meta property="og:image" content="https://ltc0316.github.io/2023/02/14/23-02-13_HPC_usage/images/23-02-14-3.jpg">
+<meta property="og:image" content="https://ltc0316.github.io/2023/02/14/23-02-14_HPC_usage/23-02-14_HPC_usage/23-02-14-1.jpg">
+<meta property="og:image" content="https://ltc0316.github.io/2023/02/14/23-02-14_HPC_usage/23-02-14_HPC_usage/23-02-14-2.jpg">
+<meta property="og:image" content="https://ltc0316.github.io/2023/02/14/23-02-14_HPC_usage/23-02-14_HPC_usage/23-02-14-3.jpg">
 <meta property="article:published_time" content="2023-02-14T02:21:26.000Z">
-<meta property="article:modified_time" content="2023-02-14T05:15:38.192Z">
+<meta property="article:modified_time" content="2023-02-14T05:24:48.565Z">
 <meta property="article:author" content="Outis Li">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://ltc0316.github.io/2023/02/14/23-02-13_HPC_usage/images/23-02-14-1.jpg">
+<meta name="twitter:image" content="https://ltc0316.github.io/2023/02/14/23-02-14_HPC_usage/23-02-14_HPC_usage/23-02-14-1.jpg">
 
-<link rel="canonical" href="https://ltc0316.github.io/2023/02/14/23-02-13_HPC_usage/">
+<link rel="canonical" href="https://ltc0316.github.io/2023/02/14/23-02-14_HPC_usage/">
 
 
 <script id="page-configurations">
@@ -166,7 +166,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://ltc0316.github.io/2023/02/14/23-02-13_HPC_usage/">
+    <link itemprop="mainEntityOfPage" href="https://ltc0316.github.io/2023/02/14/23-02-14_HPC_usage/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -190,7 +190,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2023-02-14 10:21:26 / Modified: 13:15:38" itemprop="dateCreated datePublished" datetime="2023-02-14T10:21:26+08:00">2023-02-14</time>
+              <time title="Created: 2023-02-14 10:21:26 / Modified: 13:24:48" itemprop="dateCreated datePublished" datetime="2023-02-14T10:21:26+08:00">2023-02-14</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -307,17 +307,17 @@
 <h2 id="VIII-Geant4实例（交互）"><a href="#VIII-Geant4实例（交互）" class="headerlink" title="VIII. Geant4实例（交互）"></a>VIII. Geant4实例（交互）</h2><h3 id="1-查看可用分区"><a href="#1-查看可用分区" class="headerlink" title="1. 查看可用分区"></a>1. 查看可用分区</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sacctmgr show ass user=`whoami` format=part |uniq</span><br></pre></td></tr></table></figure>
 
 <p>结果如图：</p>
-<img src="/2023/02/14/23-02-13_HPC_usage/images\23-02-14-1.jpg" alt="23-02-14-1" style="zoom:80%;">
+<img src="/2023/02/14/23-02-14_HPC_usage/23-02-14_HPC_usage\23-02-14-1.jpg" alt="23-02-14-1" style="zoom:80%;">
 
 <h3 id="2-申请核心"><a href="#2-申请核心" class="headerlink" title="2. 申请核心"></a>2. 申请核心</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">salloc -p C032M0128G -N2 --ntasks-per-node=32 -q normal -t 2:00:00</span><br></pre></td></tr></table></figure>
 
 <p>结果如图：</p>
-<img src="/2023/02/14/23-02-13_HPC_usage/images\23-02-14-2.jpg" alt="23-02-14-1" style="zoom:80%;">
+<img src="/2023/02/14/23-02-14_HPC_usage/23-02-14_HPC_usage\23-02-14-2.jpg" alt="23-02-14-1" style="zoom:80%;">
 
 <h3 id="3-登录节点"><a href="#3-登录节点" class="headerlink" title="3. 登录节点"></a>3. 登录节点</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ssh a5u03n04</span><br><span class="line">lscpu # 查看核心是否申请成功</span><br></pre></td></tr></table></figure>
 
 <p>结果如图：</p>
-<img src="/2023/02/14/23-02-13_HPC_usage/images\23-02-14-3.jpg" alt="23-02-14-1" style="zoom:80%;">
+<img src="/2023/02/14/23-02-14_HPC_usage/23-02-14_HPC_usage\23-02-14-3.jpg" alt="23-02-14-1" style="zoom:80%;">
 
 <h3 id="4-使用Geant4"><a href="#4-使用Geant4" class="headerlink" title="4. 使用Geant4"></a>4. 使用Geant4</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">cd singularity/</span><br><span class="line">module load singularity/3.7.0</span><br><span class="line">singularity shell -w Geant4</span><br><span class="line">cd Geant4/home</span><br><span class="line">source .bashrc</span><br><span class="line">cd v7</span><br><span class="line">rm -rf build/</span><br><span class="line">mkdir build</span><br><span class="line">cd build</span><br><span class="line">cmake ..</span><br><span class="line">make -j64</span><br><span class="line">./exampleB1 run1.mac &gt; log.txt</span><br></pre></td></tr></table></figure>
 
@@ -342,7 +342,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>Post link: </strong>
-    <a href="https://ltc0316.github.io/2023/02/14/23-02-13_HPC_usage/" title="HPC Usage">https://ltc0316.github.io/2023/02/14/23-02-13_HPC_usage/</a>
+    <a href="https://ltc0316.github.io/2023/02/14/23-02-14_HPC_usage/" title="HPC Usage">https://ltc0316.github.io/2023/02/14/23-02-14_HPC_usage/</a>
   </li>
   <li class="post-copyright-license">
     <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
