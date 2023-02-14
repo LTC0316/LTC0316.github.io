@@ -184,7 +184,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2023-02-14 10:21:26 / Modified: 13:35:24" itemprop="dateCreated datePublished" datetime="2023-02-14T10:21:26+08:00">2023-02-14</time>
+              <time title="Created: 2023-02-14 10:21:26 / Modified: 16:56:16" itemprop="dateCreated datePublished" datetime="2023-02-14T10:21:26+08:00">2023-02-14</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -294,15 +294,15 @@
 <h2 id="VIII-Geant4实例（交互）"><a href="#VIII-Geant4实例（交互）" class="headerlink" title="VIII. Geant4实例（交互）"></a>VIII. Geant4实例（交互）</h2><h3 id="1-查看可用分区"><a href="#1-查看可用分区" class="headerlink" title="1. 查看可用分区"></a>1. 查看可用分区</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sacctmgr show ass user=`whoami` format=part |uniq</span><br></pre></td></tr></table></figure>
 
 <p>结果如图：</p>
-<p><img src="/2023/02/14/23-02-14_HPC_usage/23-02-14-1.jpg"></p>
+<p><img src="https://i.niupic.com/images/2023/02/14/ak6j.jpg"></p>
 <h3 id="2-申请核心"><a href="#2-申请核心" class="headerlink" title="2. 申请核心"></a>2. 申请核心</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">salloc -p C032M0128G -N2 --ntasks-per-node=32 -q normal -t 2:00:00</span><br></pre></td></tr></table></figure>
 
 <p>结果如图：</p>
-<p><img src="/2023/02/14/23-02-14_HPC_usage/23-02-14-2.jpg"></p>
+<p><img src="https://i.niupic.com/images/2023/02/14/ak6e.jpg"></p>
 <h3 id="3-登录节点"><a href="#3-登录节点" class="headerlink" title="3. 登录节点"></a>3. 登录节点</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ssh a5u03n04</span><br><span class="line">lscpu # 查看核心是否申请成功</span><br></pre></td></tr></table></figure>
 
 <p>结果如图：</p>
-<p><img src="/2023/02/14/23-02-14_HPC_usage/23-02-14-3.jpg"></p>
+<p><img src="https://i.niupic.com/images/2023/02/14/ak6f.jpg"></p>
 <h3 id="4-使用Geant4"><a href="#4-使用Geant4" class="headerlink" title="4. 使用Geant4"></a>4. 使用Geant4</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">cd singularity/</span><br><span class="line">module load singularity/3.7.0</span><br><span class="line">singularity shell -w Geant4</span><br><span class="line">cd Geant4/home</span><br><span class="line">source .bashrc</span><br><span class="line">cd v7</span><br><span class="line">rm -rf build/</span><br><span class="line">mkdir build</span><br><span class="line">cd build</span><br><span class="line">cmake ..</span><br><span class="line">make -j64</span><br><span class="line">./exampleB1 run1.mac &gt; log.txt</span><br></pre></td></tr></table></figure>
 
 <hr>
