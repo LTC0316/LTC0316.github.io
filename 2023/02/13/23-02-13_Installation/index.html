@@ -22,14 +22,14 @@
 
   <meta name="description" content="在超算上搭建Singularity环境并配置Geant4 I. 制作singularity包1. 进入fakeroot节点1ssh &lt;user_id&gt;@162.105.133.209  2. 制作并进入sandbox镜像 搭建ubuntu 1singularity build --fakeroot --sandbox Geant4 docker:&#x2F;&#x2F;ubuntu:22.04  进入Ge">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Geant4-Installation">
+<meta property="og:title" content="geant4-installation">
 <meta property="og:url" content="https://ltc0316.github.io/2023/02/13/23-02-13_Installation/index.html">
 <meta property="og:site_name" content="OutisLi&#39;s Blog">
 <meta property="og:description" content="在超算上搭建Singularity环境并配置Geant4 I. 制作singularity包1. 进入fakeroot节点1ssh &lt;user_id&gt;@162.105.133.209  2. 制作并进入sandbox镜像 搭建ubuntu 1singularity build --fakeroot --sandbox Geant4 docker:&#x2F;&#x2F;ubuntu:22.04  进入Ge">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://i.niupic.com/images/2023/02/14/ak6d.jpg">
 <meta property="article:published_time" content="2023-02-13T07:41:01.000Z">
-<meta property="article:modified_time" content="2023-02-14T08:54:07.589Z">
+<meta property="article:modified_time" content="2023-02-15T04:45:32.202Z">
 <meta property="article:author" content="Outis Li">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://i.niupic.com/images/2023/02/14/ak6d.jpg">
@@ -47,7 +47,7 @@
   };
 </script>
 
-  <title>Geant4-Installation | OutisLi's Blog</title>
+  <title>geant4-installation | OutisLi's Blog</title>
   
 
 
@@ -177,7 +177,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Geant4-Installation
+          geant4-installation
         </h1>
 
         <div class="post-meta">
@@ -194,7 +194,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-02-14 16:54:07" itemprop="dateModified" datetime="2023-02-14T16:54:07+08:00">2023-02-14</time>
+                <time title="Modified: 2023-02-15 12:45:32" itemprop="dateModified" datetime="2023-02-15T12:45:32+08:00">2023-02-15</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -223,7 +223,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>681</span>
+              <span>682</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
@@ -298,7 +298,7 @@
 
 <h3 id="2-转换成sandbox镜像并启用"><a href="#2-转换成sandbox镜像并启用" class="headerlink" title="2. 转换成sandbox镜像并启用"></a>2. 转换成sandbox镜像并启用</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">singularity build --sandbox Geant4 s-Geant4.sif</span><br><span class="line">singularity shell -w Geant4</span><br></pre></td></tr></table></figure>
 
-<h3 id="3-配置环境变量"><a href="#3-配置环境变量" class="headerlink" title="3. 配置环境变量"></a>3. 配置环境变量</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">cd Geant4/home</span><br><span class="line">vim .bashrc</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">将下列语句添加到文件末尾</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash"><span class="built_in">source</span> /gpfs/share/home/2201210084/singularity/Geant4/home/geant4/bin/geant4.sh</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash"><span class="built_in">source</span> /gpfs/share/home/2201210084/singularity/Geant4/home/geant4/share/Geant4/geant4make</span></span><br><span class="line"></span><br><span class="line">source .bashrc</span><br></pre></td></tr></table></figure>
+<h3 id="3-配置环境变量"><a href="#3-配置环境变量" class="headerlink" title="3. 配置环境变量"></a>3. 配置环境变量</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">cd Geant4/home</span><br><span class="line">vim .bashrc</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">将下列语句添加到文件末尾</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash"><span class="built_in">source</span> /gpfs/share/home/2201210084/singularity/Geant4/home/geant4/bin/geant4.sh</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash"><span class="built_in">source</span> /gpfs/share/home/2201210084/singularity/Geant4/home/geant4/share/Geant4/geant4make/geant4make.sh</span></span><br><span class="line"></span><br><span class="line">source .bashrc</span><br></pre></td></tr></table></figure>
 
 <p>看见如下字样表示成功</p>
 <p><img src="https://i.niupic.com/images/2023/02/14/ak6d.jpg"></p>
@@ -321,7 +321,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>Post link: </strong>
-    <a href="https://ltc0316.github.io/2023/02/13/23-02-13_Installation/" title="Geant4-Installation">https://ltc0316.github.io/2023/02/13/23-02-13_Installation/</a>
+    <a href="https://ltc0316.github.io/2023/02/13/23-02-13_Installation/" title="geant4-installation">https://ltc0316.github.io/2023/02/13/23-02-13_Installation/</a>
   </li>
   <li class="post-copyright-license">
     <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
